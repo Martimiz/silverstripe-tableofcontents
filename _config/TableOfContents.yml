@@ -1,0 +1,16 @@
+---
+Name: tableofcontents-extensions
+---
+Page:
+  extensions:
+    ['TableOfContents']
+---
+Name: tableofcontents-config
+---
+tocconfig:
+  global-config:
+    script-or-php: 'php'
+    toggle: true
+    header-tag: 'h3'
+    add-back-to-top: true
+    except-first-header: true

@@ -1,0 +1,15 @@
+nl:
+  TableOfContents:
+    BACKTOTOP: '[Naar de inhoudsopgave]'
+    HEADING_1: 'Kop 1'
+    HEADING_2: 'Kop 2'
+    HEADING_3: 'Kop 3'
+    HEADING_4: 'Kop 4'
+    HEADING_5: 'Kop 5'
+    HEADING_6: 'Kop 6'
+    TOC: InhoudsOpgave
+    TOCENABLE: 'Toon een inhoudsopgave op deze pagina'
+    TOCHELP: 'Creeer een inhoudsopgave op deze pagina, hetzij met behulp van JavaScript (standaard) of met behulp van php.' 
+    TOCTITLE: 'Titel'
+    TOCDEFAULTTITLE: 'Inhoudsopgave'    
+    USEHEADERTYPES: 'Neem de volgende headertypes op in de inhoudsopgave'
