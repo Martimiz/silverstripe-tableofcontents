@@ -1,12 +1,24 @@
 {
-	"name": "Martimiz/silverstripe-tableofcontents",
+	"name": "martimiz/silverstripe-tableofcontents",
 	"description": "Dynamically adds a table of contents to any page, automatically adding anchors to designated headings. Can be customized, styled and set to toggle open/close.",
 	"type": "silverstripe-module",
 	"keywords": ["silverstripe", "toc", "table of contents"],
 	"homepage": "https://github.com/Martimiz/silverstripe-tableofcontents",
 	"license": "BSD",
-	"authors": [{
-		"name": "Martine Bloem (Martimiz)",
-		"email": "martimiz@gmail.com"
-	}]
+	"authors": [
+		{
+			"name": "Martine Bloem (Martimiz)",
+			"email": "martimiz@gmail.com"
+		}
+	],
+	"require":
+	{
+		"php": ">=5.3.2",
+		"silverstripe/framework": ">=3.1",
+		"silverstripe/cms": ">=3.1",
+	},
+	"support": 
+	{
+		"issues": "https://github.com/Martimiz/silverstripe-tableofcontents/issues?state=open"
+	}
 }
