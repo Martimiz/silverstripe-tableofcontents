@@ -1,0 +1,12 @@
+{
+	"name": "Martimiz/silverstripe-tableofcontents",
+	"description": "Dynamically adds a table of contents to any page, automatically adding anchors to designated headings. Can be customized, styled and set to toggle open/close.",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "toc", "table of contents"],
+	"homepage": "https://github.com/Martimiz/silverstripe-tableofcontents",
+	"license": "BSD",
+	"authors": [{
+		"name": "Martine Bloem (Martimiz)",
+		"email": "martimiz@gmail.com"
+	}]
+}
