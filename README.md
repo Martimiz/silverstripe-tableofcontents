@@ -128,6 +128,6 @@ Turn the Table of contents into a nested list (?)
 
 ## Maintainers ##
 
- * Martine Bloem (Martimiz) <martine at balbus dot nl>
+ * Martine Bloem (Martimiz)
  
  Please report any issues as an 'issue' on GitHub.
