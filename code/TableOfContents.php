@@ -60,11 +60,11 @@ class TableOfContents extends DataExtension {
 	 */
 	public function ContentPlusTOC() {
 		
+		$content = $this->owner->Content;
 		if ($this->owner->TOCEnable) {		
-			$content = $this->parseContent($this->owner->Content);
-			return DBField::create_field('HTMLText', $content);
+			$content = $this->parseContent($content);
 		}
-		return $this->owner->getField('Content');
+		return DBField::create_field('HTMLText', $content);
 	}	
 	
 	/**
