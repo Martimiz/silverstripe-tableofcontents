@@ -43,7 +43,7 @@ class TableOfContents extends DataExtension {
 
 		$fields->addFieldsToTab("Root.$tab", array( 
 			$title = HeaderField::create('TOC', _t('TableOfContents.TOC', 'TableOfContents')),
-		        LiteralField::create('TOCHelp', '<div class="field">' ._t('TableOfContents.TOCHELP', 'Enable a table of contents on your page, either by using full JavaScript (default) or using PHP') . '<div>'),
+		        LiteralField::create('TOCHelp', '<p class="field">' ._t('TableOfContents.TOCHELP', 'Enable a table of contents on your page, either by using full JavaScript (default) or using PHP') . '<p>'),
 			LiteralField::create('TOCzzz', '<p>&nbsp;</p>'),  
 			CheckboxField::create('TOCEnable', _t('TableOfContents.TOCENABLE', 'Display table of contents on this page')),
 			TextField::create('TOCTitle', _t('TableOfContents.TOCTITLE', 'Title for the table of contents (empty = none)')),
