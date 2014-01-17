@@ -252,8 +252,10 @@ EOD;
 			// html doc. If you only want the 'body', you can use the body node as a param
 			// this will leave the body in, but str_replace will take care of that:
 			// (php 5.3+)
-			$bodyNode = $doc->getElementsByTagName('body')->item(0);
-			$html     = $doc->saveHTML($bodyNode);
+			//$bodyNode = $doc->getElementsByTagName('body')->item(0);
+			//$html     = $doc->saveHTML($bodyNode);
+			
+			$html     = $doc->saveHTML();
 			$html     = str_replace(array('<body>','</body>'), '', $html);		
 
 			// Domdocument thinks <a href="[sitetree_link,id=27]"> invalid and
