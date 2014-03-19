@@ -103,6 +103,14 @@
 	}
 
 
+	// Using php to build the TOC, no toggle, just scrolling
+	$.fn.scrollTOC = function() {
+
+		clickAnchors();	
+		
+		return this;
+	}
+
 	// toggle
 	function toggle() {
 

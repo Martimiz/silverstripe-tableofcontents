@@ -14,7 +14,7 @@ class TableOfContents extends DataExtension {
 	private static $db = array(
 	    'TOCEnable'      => 'Boolean',
 	    'TOCTitle'       => 'Varchar(255)',
-	    'UseHeaderTypes' => 'Varchar(255)',
+	    'UseHeaderTypes' => 'Varchar(255)'
 	);
 
 	protected static $header_tag          = 'h4';
@@ -95,30 +95,31 @@ class TableOfContents extends DataExtension {
 
 			Requirements::css(TABLEOFCONTENTS_BASE . '/css/TableOfContents.css');
 			
-			if (!self::$use_php || self::$toggle) {
+			//if (!self::$use_php || self::$toggle) {
 				Requirements::javascript(FRAMEWORK_DIR . '/thirdparty/jquery/jquery.js');
 				Requirements::javascript(TABLEOFCONTENTS_BASE . '/javascript/TableOfContents.js');				
-			}
+			//}
 			
-			// Build the TOC using PHP, and toggle using JavaScript
-			if (self::$use_php && self::$toggle) {
+			// Build the TOC using PHP, and toggle using JavaScript or just scroll
+			if (self::$use_php) {
 
+				$func = (self::$toggle)? 'toggleTOC' : 'scrollTOC';
+				
 				$script = <<<EOD
 				( function($) {
 					$(document).ready(function() {
 						
-						$("#Content").toggleTOC();
+						$("#Content").{$func}();
 					});
 				} ) ( jQuery );       	
 EOD;
-				Requirements::customScript($script);
 			}
 			
 			// Build the TOC using JavaScript
 			else {
 
 				$backToTop         = (self::$add_back_to_top) ? _t('TableOfContents.BACKTOTOP', '[Back to top]') : '';
-				$toggle            = (self::$toggle)? 'true' : 'false';
+				$toggle            = (self::$toggle)? true : false;
 				$title             = $this->owner->TOCTitle;
 				$headers           = $this->owner->UseHeaderTypes;
 				$headerTag         = self::$header_tag;
@@ -142,9 +143,8 @@ EOD;
 					});
 				} ) ( jQuery );	
 EOD;
-
-				Requirements::customScript($script);
 			}	
+			if ($script) Requirements::customScript($script);
 		}
 	}	
 	
