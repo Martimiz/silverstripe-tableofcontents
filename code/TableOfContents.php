@@ -186,6 +186,9 @@ EOD;
 				$headerMatch = '//h1|//h2';
 			}
 			
+			// convert document before loading to prevent utf-8 problems
+			$encodedContent = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8"); 
+			
 			// use DOMDocument to parse the content
 			$doc = new DOMDocument('1.0', 'UTF-8');
 			
@@ -193,7 +196,7 @@ EOD;
 			$doc->strictErrorChecking = false;
 			$doc->formatOutput        = false;
 
-			$doc->loadHTML($content);
+			$doc->loadHTML($encodedContent);
 
 			$xpath = new DOMXpath($doc);	
 			$headerNodes = $xpath->query($headerMatch);
