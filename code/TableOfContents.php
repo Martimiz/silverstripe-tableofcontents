@@ -227,7 +227,13 @@ EOD;
 					// create an anchor for this node in Content
 					$anchor = $doc->createElement('a');
 					$anchor->setAttribute('id', $anchorID);
-					$node->appendChild($anchor);
+
+					// insert the node before the header so the header will remain
+					// visible when scrolling to it.
+					//$node->appendChild($anchor);
+					$node->parentNode->insertBefore($anchor, $node);
+					
+					
 
 					// optional: create back to top links
 					if (self::$add_back_to_top && ($counter > 1 || !self::$except_first_header)) {				
