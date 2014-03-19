@@ -171,9 +171,11 @@ EOD;
 			// title for the table of contents. If no title is provided
 			// and toggle is enabled, the default title 'Table of contents' 
 			// is used. For translations see the language files.
-			$title = $this->owner->TOCTitle;
-			if (empty($title) && self::$toggle) $title = _t('TableOfContents.TOCDEFAULTTITLE', 'Table of contents');				
+			//$title = $this->owner->TOCTitle;
+			//if (empty($title) && self::$toggle) $title = _t('TableOfContents.TOCDEFAULTTITLE', 'Table of contents');				
 
+			$title = $this->CreateTOCTitle();
+			
 			// headersize for the TOC title (h1, h2, or ...)
 			$headerSize = self::$header_tag;
 
@@ -272,9 +274,10 @@ EOD;
 		return self::$header_tag;
 	}
 	
-	public function getTOCTitle() {
-		$title = $this->owner->record['TOCTitle'];
+	public function CreateTOCTitle() {
+		$title = $this->owner->TOCTitle;
 		if (empty($title) && self::$toggle) $title = _t('TableOfContents.TOCDEFAULTTITLE', 'Table of contents');
+		return $title;
 	}
 }	
 
